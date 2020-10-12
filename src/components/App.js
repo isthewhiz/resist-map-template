@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "./Modal";
 import i18n, { i18nInit } from "../utils/i18n";
+import MapKey from "./MapKey";
 
 function App() {
   const i18nLoaded = useSelector(state => state.content.i18n)
@@ -17,6 +18,7 @@ function App() {
 
   return ( i18nLoaded
     ? <div className="App">
+        <MapKey/>
         <div style={{position: "absolute", zIndex: 1000}}>
           <button onClick={e => i18n.changeLanguage('en')}>ENGLISH</button>
           <button onClick={e => i18n.changeLanguage('es')}>SPANISH</button>
